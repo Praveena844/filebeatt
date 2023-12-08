@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metricbeat
+  namespace: your-namespace
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: metricbeat
+    spec:
+      containers:
+      - name: metricbeat
+        image: docker.elastic.co/beats/metricbeat:{version}
+        volumeMounts:
+        - name: config
+          mountPath: /usr/share/metricbeat/metricbeat.yml
+          subPath: metricbeat.yml
+    volumes:
+    - name: config
+      configMap:
+        name: metricbeat-config
