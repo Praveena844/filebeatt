@@ -1,0 +1,11 @@
+metricbeat.modules:
+- module: aws
+  period: 300s
+  metricsets:
+    - s3
+  access_key_id: "ASIAXEICFCS2ALAAQSUD"
+  secret_access_key: "3gDJt+mje+bolg8Xdn6FWf6dG/o7mOp2iX5aQxlL"
+  regions:
+    - ap-southeast-1
+  buckets:
+    - bucket_name: "queue-c4c"
