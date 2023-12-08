@@ -1,0 +1,10 @@
+filebeat.inputs:
+- type: s3
+  queue_url: https://sqs.ap-southeast-1.amazonaws.com/490167669940/queue-c4c
+  visibility_timeout: 300s
+  credential_profile_name: elastic-beats
+
+output.elasticsearch:
+  hosts: ["your-elasticsearch-endpoint:9200"]
+  username: "your-elastic-username"
+  password: "your-elastic-password"
