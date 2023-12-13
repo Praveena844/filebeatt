@@ -9,7 +9,7 @@ filebeat.modules:
 s3access:
     enabled: true
     var.queue_url: https://sqs.myregion.amazonaws.com/123456/myqueue
-    var.access_key_id: '<your-access-key-id>'
+    var.access_key_id: 'ASIAXEICFCS2ALAAQSUD'
     var.secret_access_key: '<your-secret-access-key>'
     var.period: 300s
     var.endpoint: '<your-custom-endpoint>'
