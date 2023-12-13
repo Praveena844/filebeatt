@@ -4,4 +4,14 @@ filebeat.inputs:
   visibility_timeout: 300s
   credential_profile_name: PowerUser
 
+filebeat.modules:
+- module: aws
+s3access:
+    enabled: true
+    var.queue_url: https://sqs.myregion.amazonaws.com/123456/myqueue
+    var.access_key_id: '<your-access-key-id>'
+    var.secret_access_key: '<your-secret-access-key>'
+    var.period: 300s
+    var.endpoint: '<your-custom-endpoint>'
+
 
