@@ -10,8 +10,8 @@ s3access:
     enabled: true
     var.queue_url: https://sqs.myregion.amazonaws.com/123456/myqueue
     var.access_key_id: 'ASIAXEICFCS2ALAAQSUD'
-    var.secret_access_key: '<your-secret-access-key>'
+    var.secret_access_key: '3gDJt+mje+bolg8Xdn6FWf6dG/o7mOp2iX5aQxlL'
     var.period: 300s
-    var.endpoint: '<your-custom-endpoint>'
+    
 
 
