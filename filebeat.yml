@@ -1,20 +1,27 @@
-filebeat.inputs:
-- type: s3
-  enabled: true
-  credential_profile_name: "PowerUser"
-  queue_url: "https://sqs.ap-southeast-1.amazonaws.com/490167669940/queue-c4c"
-  visibility_timeout: "300s"
-
-filebeat.modules:
-- module: aws
-
-s3access:
-  enabled: true
-  var.access_key_id: "ASIAXEICFCS2ALAAQSUD"
-  var.secret_access_key: "3gDJt+mje+bolg8Xdn6FWf6dG/o7mOp2iX5aQxlL"
-  var.period: "300s"
-  var.queue_url: "https://sqs.ap-southeast-1.amazonaws.com/490167669940/queue-c4c"
 
     
 
 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: filebeat-config
+  namespace: efklogs
+data:
+  filebeat.yml: |-
+    filebeat.inputs:
+    - type: s3
+      enabled: true
+      credential_profile_name: "PowerUser"
+      queue_url: "https://sqs.ap-southeast-1.amazonaws.com/490167669940/queue-c4c"
+      visibility_timeout: "300s"
+
+    filebeat.modules:
+    - module: aws
+
+    s3access:
+      enabled: true
+      var.access_key_id: "ASIAXEICFCS2ALAAQSUD"
+      var.secret_access_key: "3gDJt+mje+bolg8Xdn6FWf6dG/o7mOp2iX5aQxlL"
+      var.period: "300s"
+      var.queue_url: "https://sqs.ap-southeast-1.amazonaws.com/490167669940/queue-c4c"
